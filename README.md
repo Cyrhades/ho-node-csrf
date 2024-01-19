@@ -10,7 +10,7 @@ app.get('/admin/user/add', csrf.token,
    (req, res, next) => User.isConnected(req, res, next), 
    (req, res, next) => User.formAddProcess(req, res, next)
 );
-app.post('/admin/user/add', urlencodedParser, uploadFile, csrf.verify,
+app.post('/admin/user/add', csrf.verify,
    (req, res, next) => User.isConnected(req, res, next), 
    (req, res, next) => User.formAddProcess(req, res, next)
 );
